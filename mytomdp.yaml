@@ -1,0 +1,20 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myapp
+spec:
+  selector:
+    matchLabels:
+      app: myapp
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: myapp
+    spec:
+      containers:
+        - name: myappcon
+          image: 971098455874.dkr.ecr.ap-south-1.amazonaws.com/mytom:1
+          ports:
+            - containerPort: 8080
