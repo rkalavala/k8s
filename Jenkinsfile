@@ -38,32 +38,6 @@ pipeline {
           sh 'docker --version'
           sh 'docker build -t mytom:1 .'
         }
-      }
-      stage('Push to ECR'){
-    	steps {
-    	  echo 'push to ECR'
-          sh '$(aws ecr get-login --no-include-email)'
-          sh 'docker tag mytom:1 971098455874.dkr.ecr.ap-south-1.amazonaws.com/mytom:1'
-          sh 'docker push 971098455874.dkr.ecr.ap-south-1.amazonaws.com/mytom:1'
-        }
-     }
-     stage('kubectl check'){
-    	steps {
-    	  sh 'kubectl get nodes'
-        }
-     }
-      stage('Apply Deployment'){
-    	steps {
-    	  sh 'kubectl apply -f mytomdp.yaml'
-        }
-     }
-     stage('Apply service'){
-    	steps {
-    	  sh 'kubectl apply -f mytomsv.yaml'
-        }
-     }
-     
-     
-	  
+      }	  
    }
 }
