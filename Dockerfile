@@ -1,6 +1,6 @@
 FROM tomcat:8.0
 
-MAINTAINER rajesh
+MAINTAINER ramakrishna
 
 COPY /target/mvn-hello-world.war /usr/local/tomcat/webapps/
 
