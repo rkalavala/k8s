@@ -7,7 +7,7 @@ pipeline {
    stages {
      stage('pull repo'){
     	steps {
-          git 'https://gitlab.com/jagarlamudirajesh34/k8s-repo.git'
+          git 'https://github.com/rkalavala/k8s'
         }
      }
      stage('build artifactry'){
