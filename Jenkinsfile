@@ -24,7 +24,7 @@ pipeline {
               "files": [
                    {
                      "pattern": "/var/lib/jenkins/.m2/repository/com/srish/mvn-hello-world/1.1/mvn-hello-world-1.1.war",
-                     "target": "k8s/"
+                     "target": "k8ss/"
                    }
                ]
              }"""
